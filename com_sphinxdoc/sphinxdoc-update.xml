@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
+   <update>
+      <name>SphinxDoc</name>
+      <description>SphinxDoc Component</description>
+      <element>com_sphinxdoc</element>
+      <type>component</type>
+      <version>1.5.0</version>
+
+      <infourl title="SphinxDoc URL">http://bibi2100.gallet.info</infourl>
+      <downloads>
+         <downloadurl type="full" format="tgz">http://bibi2100.gallet.info/files/com_sphinxdoc-1.5.0-final.zip</downloadurl>
+      </downloads>
+      <tags>
+         <tag>some-tag</tag>
+      </tags>
+
+      <maintainer>bibi21000</maintainer>
+      <maintainerurl>http://bibi2100.gallet.info</maintainerurl>
+      <section>some-section</section>
+      <targetplatform name="joomla" version="2.5" />
+   </update>
+
+
+</updates>

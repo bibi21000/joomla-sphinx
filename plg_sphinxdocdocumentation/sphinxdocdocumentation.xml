@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="plugin" group="content" method="upgrade">
+	<name>Content - Link to a sphinx documentation</name>
+	<author>Bibi21000</author>
+	<creationDate>Octobre 2012</creationDate>
+	<copyright>Copyright (C) 2008-2012 bibi21000.</copyright>
+	<license>GNU</license>
+	<authorEmail>bibi21000@gmail.com</authorEmail>
+	<authorUrl>bibi21000.gallet.info</authorUrl>
+	<version>0.1.7</version>
+	<description>
+	   Plugin to display a link to a sphinx documentation into an article.
+	</description>
+	<languages>
+		<language tag="en-GB">en-GB.plg_content_sphinxdocdocumentation.ini</language>
+		<language tag="en-GB">en-GB.plg_content_sphinxdocdocumentation.sys.ini</language>
+	</languages>
+	<files>
+		<filename plugin="sphinxdocdocumentation">sphinxdocdocumentation.php</filename>
+		<filename plugin="sphinxdocdocumentation">index.html</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="style" type="list"
+					default="none"
+					description="Default style, unless specified/overruled in editor code, see example code in plugin description"
+					label="Default style">
+					<option value="xhtml">xhtml (wrapped by divs)</option>
+					<option value="rounded">rounded (wrapped by multiple Divs)</option>
+					<option value="none">none (raw output)</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

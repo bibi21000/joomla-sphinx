@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_SPHINXDOC_SPHINXDOCS_VIEW_DEFAULT_TITLE">
+		<message>COM_SPHINXDOC_SPHINXDOCS_VIEW_DEFAULT_DESC</message>
+	</layout>
+
+	<!-- Add fields to the parameters object for the layout. -->
+	<fields name="params">
+
+		<!-- Basic options. -->
+		<fieldset name="basic"
+			label="COM_SPHINXDOC_ATTRIBS_DOCUMENTATION_SETTINGS_LABEL">
+
+		<field
+			name="show_title"
+			type="list"
+			label="JGLOBAL_SHOW_TITLE_LABEL"
+			description="JGLOBAL_SHOW_TITLE_DESC">
+			<option value="">JGLOBAL_USE_GLOBAL</option>
+			<option	value="0">JHIDE</option>
+			<option	value="1">JSHOW</option>
+		</field>
+
+		<field
+			name="show_category"
+			type="list"
+			label="JGLOBAL_SHOW_CATEGORY_LABEL"
+			description="JGLOBAL_SHOW_CATEGORY_DESC">
+			<option value="">JGLOBAL_USE_GLOBAL</option>
+			<option	value="0">JHIDE</option>
+			<option	value="1">JSHOW</option>
+		</field>
+
+		<field
+			name="show_author"
+			type="list"
+			label="JGLOBAL_SHOW_AUTHOR_LABEL"
+			description="JGLOBAL_SHOW_AUTHOR_DESC">
+			<option	value="">JGLOBAL_USE_GLOBAL</option>
+			<option	value="0">JHIDE</option>
+			<option	value="1">JSHOW</option>
+		</field>
+
+		<field
+			name="show_create_date"
+			type="list"
+			label="JGLOBAL_SHOW_CREATE_DATE_LABEL"
+			description="JGLOBAL_SHOW_CREATE_DATE_DESC">
+			<option	value="">JGLOBAL_USE_GLOBAL</option>
+			<option	value="0">JHIDE</option>
+			<option	value="1">JSHOW</option>
+		</field>
+
+		<field
+			name="show_modify_date"
+			type="list"
+			label="JGLOBAL_SHOW_MODIFY_DATE_LABEL"
+			description="JGLOBAL_SHOW_MODIFY_DATE_DESC">
+			<option	value="">JGLOBAL_USE_GLOBAL</option>
+			<option	value="0">JHIDE</option>
+			<option	value="1">JSHOW</option>
+		</field>
+
+		<field
+			name="show_print_icon"
+			type="list"
+			label="JGLOBAL_SHOW_PRINT_ICON_LABEL"
+			description="JGLOBAL_SHOW_PRINT_ICON_DESC">
+			<option	value="">JGLOBAL_USE_GLOBAL</option>
+			<option	value="0">JHIDE</option>
+			<option	value="1">JSHOW</option>
+		</field>
+
+		<field
+			name="show_email_icon"
+			type="list"
+			label="JGLOBAL_SHOW_EMAIL_ICON_LABEL"
+			description="JGLOBAL_SHOW_EMAIL_ICON_DESC">
+			<option	value="">JGLOBAL_USE_GLOBAL</option>
+			<option	value="0">JHIDE</option>
+			<option	value="1">JSHOW</option>
+		</field>
+
+		</fieldset>
+	</fields>
+</metadata>
+
