@@ -35,6 +35,7 @@ function SphinxdocBuildRoute(&$query)
 		$menuItem = $menu->getItem($query['Itemid']);
 		$menuItemGiven = true;
 	}
+
 	error_log('Itemid ');
 
 	if (isset($query['view'])) {
@@ -44,6 +45,8 @@ function SphinxdocBuildRoute(&$query)
 		// we need to have a view in the query or it is an invalid URL
 		return $segments;
 	}
+
+	error_log("query['view'] ");
 
 	// are we dealing with an article or category that is attached to a menu item?
 	if (($menuItem instanceof stdClass) && $menuItem->query['view'] == $query['view'] && isset($query['id']) && $menuItem->query['id'] == intval($query['id'])) {
@@ -61,6 +64,8 @@ function SphinxdocBuildRoute(&$query)
 
 		return $segments;
 	}
+
+	error_log("view == 'sphinxdoc' ");
 
 	if ($view == 'category' || $view == 'sphinxdoc')
 	{
@@ -97,6 +102,8 @@ function SphinxdocBuildRoute(&$query)
 				return $segments;
 			}
 		}
+
+		error_log("catid");
 
 		if ($menuItemGiven && isset($menuItem->query['id'])) {
 			$mCatid = $menuItem->query['id'];
