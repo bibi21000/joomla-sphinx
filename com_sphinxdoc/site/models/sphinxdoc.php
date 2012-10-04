@@ -157,6 +157,7 @@ class SphinxDocModelSphinxDoc extends JModelItem
 				$this->item->params = $params;
 			}
 		}
+		error_log('models.sphinxdocs return item '.$this->item->alias);
 		return $this->item;
 	}
 }

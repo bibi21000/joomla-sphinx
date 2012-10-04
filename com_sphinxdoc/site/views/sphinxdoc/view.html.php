@@ -22,6 +22,7 @@ class SphinxDocViewSphinxDoc extends JView
 
 		JHTML::stylesheet('media/com_sphinxdoc/css/site.stylesheet.css' );
 
+		error_log('view sphinxdoc');
         // Assign data to the view
         $this->item = $this->get('Item');
 		error_log('view item '.$this->item->id);
