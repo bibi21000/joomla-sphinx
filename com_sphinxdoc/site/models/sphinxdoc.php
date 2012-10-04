@@ -73,7 +73,7 @@ class SphinxDocModelSphinxDoc extends JModelItem
 		if (!isset($this->item))
 		{
 			//$pk = JRequest::getInt('id');
-			error_log('PK '.$pk);
+			error_log('models.sphinxdocs PK '.$pk);
 
 			$this->setState('sphinxdoc.id', $pk);
 

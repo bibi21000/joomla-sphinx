@@ -24,7 +24,7 @@ class SphinxDocViewSphinxDoc extends JView
 
         // Assign data to the view
         $this->item = $this->get('Item');
-		error_log('item '.$this->item->id);
+		error_log('view item '.$this->item->id);
 
 		//echo $this->item->id;
 		$this->print	= JRequest::getBool('print');

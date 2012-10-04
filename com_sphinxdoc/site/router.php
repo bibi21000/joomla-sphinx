@@ -36,7 +36,7 @@ function SphinxdocBuildRoute(&$query)
 		$menuItemGiven = true;
 	}
 
-	error_log('Itemid ');
+	error_log('Router Itemid ');
 
 	if (isset($query['view'])) {
 		$view = $query['view'];
@@ -46,7 +46,7 @@ function SphinxdocBuildRoute(&$query)
 		return $segments;
 	}
 
-	error_log("query['view'] ");
+	error_log("Router query['view'] ");
 
 	// are we dealing with an article or category that is attached to a menu item?
 	if (($menuItem instanceof stdClass) && $menuItem->query['view'] == $query['view'] && isset($query['id']) && $menuItem->query['id'] == intval($query['id'])) {
@@ -65,7 +65,7 @@ function SphinxdocBuildRoute(&$query)
 		return $segments;
 	}
 
-	error_log("view == 'sphinxdoc' ");
+	error_log("Router view == 'sphinxdoc' ");
 
 	if ($view == 'category' || $view == 'sphinxdoc')
 	{
@@ -103,7 +103,7 @@ function SphinxdocBuildRoute(&$query)
 			}
 		}
 
-		error_log("catid");
+		error_log("Router catid");
 
 		if ($menuItemGiven && isset($menuItem->query['id'])) {
 			$mCatid = $menuItem->query['id'];
@@ -120,6 +120,7 @@ function SphinxdocBuildRoute(&$query)
 		}
 
 		$path = array_reverse($category->getPath());
+		error_log("Router reverse path");
 
 		$array = array();
 
@@ -190,6 +191,7 @@ function SphinxdocBuildRoute(&$query)
 			}
 		}
 	}
+	error_log("Router return");
 
 	return $segments;
 }
