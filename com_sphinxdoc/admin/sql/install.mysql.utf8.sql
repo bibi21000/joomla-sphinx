@@ -8,7 +8,7 @@ CREATE TABLE `#__sphinxdoc` (
   `catid` int(11) NOT NULL DEFAULT '0',
   `alias` varchar(255) NOT NULL DEFAULT '',
   `updateh` int(2) NOT NULL DEFAULT '0',
-  `params` TEXT NOT NULL DEFAULT '',
+  `params` VARCHAR(1024) NOT NULL DEFAULT '',
   `description` TEXT NOT NULL DEFAULT '',
   `created` datetime NOT NULL default '0000-00-00 00:00:00',
   `created_by` int(10) unsigned NOT NULL default '0',
