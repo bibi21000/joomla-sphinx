@@ -91,11 +91,11 @@ class SphinxDocTableSphinxDoc extends JTable
 		}
 
 	// Verify that the alias is unique
-	//	$table = JTable::getInstance('SphinxDoc', 'SphinxDocTableSphinxDoc');
-	//	if ($table->load(array('alias'=>$this->alias, 'catid'=>$this->catid)) && ($table->id != $this->id || $this->id==0)) {
-	//		$this->setError(JText::_('COM_SPHINXDOC_ERROR_UNIQUE_ALIAS'));
-	//		return false;
-	//	}
+		$table = JTable::getInstance('SphinxDoc', 'SphinxDocTable');
+		if ($table->load(array('alias'=>$this->alias, 'catid'=>$this->catid)) && ($table->id != $this->id || $this->id==0)) {
+			$this->setError(JText::_('COM_SPHINXDOC_ERR_UNIQUE_ALIAS'));
+			return false;
+		}
 		// Attempt to store the user data.
 		return parent::store($updateNulls);
 	}
@@ -111,7 +111,7 @@ class SphinxDocTableSphinxDoc extends JTable
 	protected function _getAssetName()
 	{
 		$k = $this->_tbl_key;
-		return 'com_sphinxdoc.message.'.(int) $this->$k;
+		return 'com_sphinxdoc.sphinxdoc.'.(int) $this->$k;
 	}
 
 	/**

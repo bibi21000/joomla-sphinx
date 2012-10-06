@@ -19,7 +19,7 @@ class SphinxDocModelSphinxDocs extends JModelList
 		$db = JFactory::getDBO();
 		$query = $db->getQuery(true);
 		// Select some fields
-		$query->select('sd.id, sd.documentation, sd.directory');
+		$query->select('sd.id, sd.documentation, sd.directory, sd.alias');
 		// From the hello table
 		$query->from('#__sphinxdoc as sd');
 		$query->select('c.title AS category, c.alias AS category_alias, c.access AS category_access');

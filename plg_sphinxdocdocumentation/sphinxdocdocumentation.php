@@ -114,8 +114,8 @@ public function onContentPrepare($context, &$article, &$params, $page = 0)
 					} elseif (isset($item->alias) && $item->alias != '') {
 						$textOutput = $item->alias;
 					} else {
-						//$textOutput = JText::_('PLG_CONTENT_PHOCADOWNLOAD_DOWNLOAD_FILE');
-						$textOutput = "None";
+						$textOutput = JText::_('PLG_CONTENT_SPHINXDOCDOCUMENTATION_DOCUMENTATION_NOTFOUND');
+						//$textOutput = "None";
 					}
 				$output .= '<a href="'. $fulllink.'"'.$targetOutput.'>'. $textOutput.'</a>';
 

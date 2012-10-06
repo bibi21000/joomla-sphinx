@@ -129,13 +129,13 @@
             </field>
 
 			<field
-				name="link_author"
-				type="radio"
+				name="link_author" type="list"
 				label="JGLOBAL_LINK_AUTHOR_LABEL"
 				description="JGLOBAL_LINK_AUTHOR_DESC"
 				default="1">
-				<option value="0">JNO</option>
-				<option value="1">JYES</option>
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JHIDE</option>
+                <option value="1">JSHOW</option>
 			</field>
 
             <field

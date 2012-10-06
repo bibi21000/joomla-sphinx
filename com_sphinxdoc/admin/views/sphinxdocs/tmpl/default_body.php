@@ -11,8 +11,12 @@ defined('_JEXEC') or die('Restricted Access');
 			<?php echo JHtml::_('grid.id', $i, $item->id); ?>
 		</td>
 		<td>
-			<?php echo $item->documentation; ?>
+			<a href="<?php echo JRoute::_('index.php?option=com_sphinxdoc&task=sphinxdoc.edit&id='.(int) $item->id); ?>">
+					<?php echo $this->escape($item->documentation); ?></a>
+			<p class="smallsub">
+				<?php echo JText::sprintf('JGLOBAL_LIST_ALIAS', $this->escape($item->alias));?></p>
 		</td>
+
 		<td>
 			<?php echo $item->category; ?>
 		</td>
