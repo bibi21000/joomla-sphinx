@@ -61,8 +61,8 @@ function SphinxdocParseRoute($segments)
                        $id = explode( ':', $segments[1] );
                        $vars['id'] = (int) $id[0];
                        break;
-               case 'sphinxdoc':
-                       $vars['view'] = 'sphinxdoc';
+               case 'documentation':
+                       $vars['view'] = 'documentation';
                        $id = explode( ':', $segments[1] );
                        $vars['id'] = (int) $id[0];
                        if(isset($segments[2]))

@@ -33,7 +33,7 @@ abstract class SphinxdocHelperRoute
 			'sphinxdoc'  => array((int) $id)
 		);
 		//Create the link
-		$link = 'index.php?option=com_sphinxdoc&view=sphinxdoc&id='. $id;
+		$link = 'index.php?option=com_sphinxdoc&view=documentation&id='. $id;
 		//$link = 'index.php?view=sphinxdoc&id='. $id;
 
 		if ($language && $language != "*" && JLanguageMultilang::isEnabled()) {
