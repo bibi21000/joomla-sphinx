@@ -67,33 +67,34 @@ class SphinxDocViewSphinxDoc extends JView
 			endif;
 
             // TODO: Change based on shownoauth
-            $fulllink = JRoute::_(SphinxdocHelperRoute::getSphinxdocRoute($slug));
+            $fulllink = SphinxdocHelperRoute::getSphinxdocRoute($slug);
 
             $page = array(
-                'fulllink' => $fulllink."&page=".$link->getAttribute('href'),
+                'fulllink' => JRoute::_($fulllink."&page=".str_replace(".html","",$link->getAttribute('href'))),
                 'title' => $link->nodeValue
             );
             $item->pages[$link->getAttribute('href')] = $page;
         }
-        $fulllink = JRoute::_(SphinxdocHelperRoute::getSphinxdocRoute($slug));
         $page = array(
-                'fulllink' => $fulllink."&showall=1",
+                'fulllink' => SphinxdocHelperRoute::getSphinxdocRoute($slug)."&page=fulldoc",
                 'title' => JText::_('COM_SPHINXDOC_ALL_PAGES')
             );
         $item->pages['all'] = $page;
 
 		$offset = $this->state->get('list.offset');
 
-        $showall = JRequest::getInt('showall');
+        //$showall = JRequest::getInt('showall');
         $page = JRequest::getString('page');
         if ($page == "") :
             $page = $item->defaultpage;
+        elseif ($page != "fulldoc") :
+			$page = $page.".html";
         endif;
 		//Create a context to use utf8
 		$opts = array('http' => array('header' => 'Accept-Charset: UTF-8, *;q=0'));
 		$context = stream_context_create($opts);
-        if ($showall == 1) :
-			$item->text = "";
+        if ($page == "fulldoc") :
+			$page->text = "";
             //Iterate over the extracted links and display their URLs
             foreach ($item->pages as $cle => $element){
                 if ($cle != "all") :

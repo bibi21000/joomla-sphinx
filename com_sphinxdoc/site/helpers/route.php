@@ -34,33 +34,24 @@ abstract class SphinxdocHelperRoute
 		);
 		//Create the link
 		$link = 'index.php?option=com_sphinxdoc&view=sphinxdoc&id='. $id;
-		if ((int)$catid > 1)
-		{
-			$categories = JCategories::getInstance('sphinxdoc');
-			$category = $categories->get((int)$catid);
-			if($category)
-			{
-				$needles['category'] = array_reverse($category->getPath());
-				$needles['categories'] = $needles['category'];
-				$link .= '&catid='.$catid;
-			}
-		}
-			if ($language && $language != "*" && JLanguageMultilang::isEnabled()) {
-				$db		= JFactory::getDBO();
-				$query	= $db->getQuery(true);
-				$query->select('a.sef AS sef');
-				$query->select('a.lang_code AS lang_code');
-				$query->from('#__languages AS a');
-				//$query->where('a.lang_code = ' .$language);
-				$db->setQuery($query);
-				$langs = $db->loadObjectList();
-				foreach ($langs as $lang) {
-					if ($language == $lang->lang_code) {
-						$language = $lang->sef;
-						$link .= '&lang='.$language;
-					}
+		//$link = 'index.php?view=sphinxdoc&id='. $id;
+
+		if ($language && $language != "*" && JLanguageMultilang::isEnabled()) {
+			$db		= JFactory::getDBO();
+			$query	= $db->getQuery(true);
+			$query->select('a.sef AS sef');
+			$query->select('a.lang_code AS lang_code');
+			$query->from('#__languages AS a');
+			//$query->where('a.lang_code = ' .$language);
+			$db->setQuery($query);
+			$langs = $db->loadObjectList();
+			foreach ($langs as $lang) {
+				if ($language == $lang->lang_code) {
+					$language = $lang->sef;
+					$link .= '&lang='.$language;
 				}
 			}
+		}
 
 		if ($item = self::_findItem($needles)) {
 			$link .= '&Itemid='.$item;
